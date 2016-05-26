@@ -1,0 +1,27 @@
+
+////////////this is task schema///////////////////////////////////////////////////
+
+path /{abc} {
+
+	read() { true }
+  	write() { true }
+
+}
+
+
+path /{abc}/{taskId} is Task{
+
+	read() { true }
+  	write() { true }
+
+}
+
+
+type Task{
+
+	title: String,
+	detail: String,
+	other : String
+}
+////////////this is task schema///////////////////////////////////////////////////
+

@@ -1,0 +1,11 @@
+{
+  "name": "sd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "firebase-bolt < rules.bolt > rules.json "
+  },
+  "author": "",
+  "license": "ISC"
+}

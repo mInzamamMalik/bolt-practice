@@ -1,0 +1,10 @@
+{
+  "firebase": "teamofteam",
+  "public": "public",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ],
+  "rules": "rules.json"
+}

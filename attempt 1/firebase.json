@@ -1,0 +1,10 @@
+{
+  "firebase": "sales-man-app",
+  "public": "public",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ],
+  "rules": "rules.json"
+}

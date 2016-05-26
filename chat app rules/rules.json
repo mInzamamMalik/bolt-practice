@@ -1,0 +1,81 @@
+{
+  "rules": {
+    "project_id": {
+      "tasks": {
+        "$taskid": {
+          ".validate": "newData.hasChildren(['title', 'description', 'Created_By', 'comments', 'likes'])",
+          "title": {
+            ".validate": "newData.isString()"
+          },
+          "description": {
+            ".validate": "newData.isString()"
+          },
+          "Created_By": {
+            ".validate": "newData.isString()"
+          },
+          "comments": {
+            ".validate": "newData.hasChildren()",
+            "$commentid": {
+              ".validate": "newData.isBoolean()"
+            }
+          },
+          "likes": {
+            ".validate": "newData.hasChildren()",
+            "$userId": {
+              ".validate": "newData.isBoolean()"
+            }
+          },
+          "$other": {
+            ".validate": "false"
+          }
+        }
+      },
+      "comments": {
+        "$taskid": {
+          "$commentid": {
+            ".validate": "newData.hasChildren(['body', 'author'])",
+            "body": {
+              ".validate": "newData.isString()"
+            },
+            "author": {
+              ".validate": "newData.isString()"
+            },
+            "$other": {
+              ".validate": "false"
+            }
+          }
+        }
+      },
+      "taskState": {
+        ".validate": "newData.hasChildren(['todo', 'doing', 'review', 'done'])",
+        "todo": {
+          ".validate": "newData.hasChildren()",
+          "$taskId": {
+            ".validate": "newData.isBoolean()"
+          }
+        },
+        "doing": {
+          ".validate": "newData.hasChildren()",
+          "$taskId": {
+            ".validate": "newData.isBoolean()"
+          }
+        },
+        "review": {
+          ".validate": "newData.hasChildren()",
+          "$taskId": {
+            ".validate": "newData.isBoolean()"
+          }
+        },
+        "done": {
+          ".validate": "newData.hasChildren()",
+          "$taskId": {
+            ".validate": "newData.isBoolean()"
+          }
+        },
+        "$other": {
+          ".validate": "false"
+        }
+      }
+    }
+  }
+}
